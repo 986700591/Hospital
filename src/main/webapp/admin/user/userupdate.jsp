@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>用户管理</title>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="page">
+<h2>用户信息</h2>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	<form method="post" action="${pageContext.request.contextPath}/user/userUpdate">
+	  <input type="hidden" name="uid" value="${userCustom.uid}"/>
+	  <input type="hidden" name="username" value="${userCustom.username}"/>
+	  <tr>
+	    <th>用户账号 :</th>
+	    <td><font size="4">${userCustom.username}</font></td>
+	  </tr>
+	  <tr>
+	    <th>用户名称 :</th>
+	    <td><input type="text" value="${userCustom.name}" name="name"/></td>
+	  </tr>
+	  <tr>
+	    <th>用户邮箱 :</th>
+	    <td><input type="text" value="${userCustom.email}" name="email"/><span><font color="red">${emailError}</font></span></td>
+	  </tr>
+	  <tr>
+	    <th>用户手机 :</th>
+	    <td><input type="text" value="${userCustom.phone}" name="phone"/><span><font color="red">${phoneError}</font></span></td>
+	  </tr>
+	  <tr>
+	    <th>用户地址 :</th>
+	    <td><textarea rows="2" cols="50" name="address">${userCustom.address}</textarea></td>
+	  </tr>
+	  <tr align="center">
+	  	<td colspan="2">
+	  		<button type="reset" value="重置" style="width: 120px; height: 30px;">&#37325;&#32622;</button>
+	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  		<button type="submit" value="确定" style="width: 120px; height: 30px;">&#30830;&#23450;</button>
+	  	</td>
+	  </tr>
+	</form>
+</table>
+</body>
+</html>
